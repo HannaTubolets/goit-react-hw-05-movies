@@ -1,16 +1,42 @@
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { HomePage } from '../pages/HomePage/HomePage';
+import MoviesPage from '../pages/MoviesPage/MoviesPage';
+import MovieDetailsPage from '../pages/MovieDetailsPage/MovieDetailsPage';
+import { Header } from '../pages/Header/Header';
+
+// import { lazy } from 'react';
+// const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
+// const MoviesPage = lazy(() => import('../pages/MoviesPage/MoviesPage'));
+// const MovieDetailsPage = lazy(() =>
+//   import('../pages/MovieDetailsPage/MovieDetailsPage')
+// );
+// const Header = lazy(() => import('../pages/Header/Header'));
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '30vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
+    <div>
+      <Routes>
+        <Route path="/" element={<Header />}>
+          <Route index element={<HomePage />} />
+          <Route path="movies" element={<MoviesPage />} />
+          <Route path="movies/:movieId" element={<MovieDetailsPage />} />
+        </Route>
+        <Route path="*" element={<Navigate to="/" replace={true} />} />
+      </Routes>
     </div>
   );
 };
+
+// import React, { Suspense } from 'react';
+
+// const OtherComponent = React.lazy(() => import('./OtherComponent'));
+
+// function MyComponent() {
+//   return (
+//     <div>
+//       <Suspense fallback={<div>Завантаження...</div>}>
+//         <OtherComponent />
+//       </Suspense>
+//     </div>
+//   );
+// }
