@@ -28,6 +28,7 @@ export function getMovieDetails(movie_id) {
     `${BASE_URL}movie/${movie_id}?api_key=${KEY}&language=en-US`
   );
 }
+// console.log(getMovieDetails(640146));
 
 export function getMovieCredits(movie_id) {
   return fetchMovies(

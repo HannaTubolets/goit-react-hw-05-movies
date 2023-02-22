@@ -3,6 +3,8 @@ import { HomePage } from '../pages/HomePage/HomePage';
 import MoviesPage from '../pages/MoviesPage/MoviesPage';
 import MovieDetailsPage from '../pages/MovieDetailsPage/MovieDetailsPage';
 import { Header } from '../pages/Header/Header';
+import Cast from '../pages/MovieCast/MovieCast';
+import Reviews from '../pages/MovieReviews/MovieReviews';
 
 // import { lazy } from 'react';
 // const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
@@ -19,7 +21,10 @@ export const App = () => {
         <Route path="/" element={<Header />}>
           <Route index element={<HomePage />} />
           <Route path="movies" element={<MoviesPage />} />
-          <Route path="movies/:movieId" element={<MovieDetailsPage />} />
+          <Route path="movies/:moviesId" element={<MovieDetailsPage />}>
+            <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
+          </Route>
         </Route>
         <Route path="*" element={<Navigate to="/" replace={true} />} />
       </Routes>

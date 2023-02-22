@@ -9,7 +9,7 @@ export const Header = () => {
       <header className={css.Header}>
         <div>
           <div>
-            <svg class={css.Logo} width="20" height="20">
+            <svg className={css.Logo} width="20" height="20">
               <use href="../../images/movie-icon.svg"></use>
             </svg>
 

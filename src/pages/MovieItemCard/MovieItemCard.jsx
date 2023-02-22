@@ -12,6 +12,7 @@ export function MovieItemCard({
   genres,
 }) {
   const location = useLocation();
+  const releaseData = new Date(release_date);
 
   return (
     <li key={id} className={css.MovieGalleryItem}>
@@ -25,15 +26,15 @@ export function MovieItemCard({
           src={
             poster_path
               ? `https://image.tmdb.org/t/p/w500${poster_path}`
-              : '../../images/image_not_available.png'
+              : new URL('../../images/image_not_available.png', import.meta.url)
           }
           alt={title}
           min-width={'100px'}
         />
         <div>
-          <h2>{title}</h2>
+          <h2 className={css.MovieName}>{title}</h2>
           <p>{overview}</p>
-          <p>{release_date}</p>
+          <p className={css.MovieDate}>{releaseData.toLocaleDateString()}</p>
           <p>{vote_average}</p>
           <p>{genres}</p>
         </div>
@@ -47,7 +48,7 @@ MovieItemCard.propTypes = {
   title: PropTypes.string.isRequired,
   poster_path: PropTypes.string,
   overview: PropTypes.string.isRequired,
-  release_date: PropTypes.string.isRequired,
+  release_date: PropTypes.string,
   vote_average: PropTypes.number.isRequired,
   genres: PropTypes.string.isRequired,
 };
