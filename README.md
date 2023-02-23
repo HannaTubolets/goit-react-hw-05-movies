@@ -1,8 +1,8 @@
-# Feedback widget
-An individual project for collecting feedback from customers.
+# Movie App
+Individual project for searching movies.
 
-Created a simple application for collecting statistics.
-(Practical skills in creating React components, monitoring of events and states).
+Created a simple application for searching movies.
+(Practical skills in using API, React Hooks).
 
 This project was created with the help of
 [Create React App](https://github.com/facebook/create-react-app).
