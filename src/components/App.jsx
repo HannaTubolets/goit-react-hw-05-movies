@@ -1,4 +1,10 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
+// import  HomePage  from '../pages/HomePage/HomePage';
+// import MoviesPage from '../pages/MoviesPage/MoviesPage';
+// import MovieDetailsPage from '../pages/MovieDetailsPage/MovieDetailsPage';
+// import  Header  from '../pages/Header/Header';
+// import Cast from '../pages/MovieCast/MovieCast';
+// import Reviews from '../pages/MovieReviews/MovieReviews';
 
 import { lazy, Suspense } from 'react';
 import { Loader } from './Loader/Loader';
@@ -7,7 +13,7 @@ const MoviesPage = lazy(() => import('../pages/MoviesPage/MoviesPage'));
 const MovieDetailsPage = lazy(() =>
   import('../pages/MovieDetailsPage/MovieDetailsPage')
 );
-const Header = lazy(() => import('../pages/Header/Header'));
+const Header = lazy(() => import('./Header/Header'));
 const Cast = lazy(() => import('../pages/MovieCast/MovieCast'));
 const Reviews = lazy(() => import('../pages/MovieReviews/MovieReviews'));
 

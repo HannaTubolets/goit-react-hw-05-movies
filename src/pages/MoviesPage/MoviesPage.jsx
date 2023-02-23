@@ -1,30 +1,24 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { getSearchedMovies } from '../../services/Api';
-import { MoviePageCardList } from '../MoviesPage/MoviePageCardList';
+import { MoviePageCardList } from '../../components/MoviePageCardList';
 import css from '../MoviesPage/MoviesPage.module.css';
 
 export default function MoviesPage() {
   const [search, setSearch] = useState('');
-  const [searchSubmit, setSearchSubmit] = useState('');
+
   const [searchMovies, setSearchMovies] = useState([]);
   const [searchParam, setSearchParam] = useSearchParams();
 
-  useEffect(() => {
-    if (searchParam.has('query')) {
-      setSearchSubmit(searchParam.get('query'));
-    }
-    return () => {
-      setSearchMovies([]);
-    };
-  }, [searchParam]);
+  const movieQuery = searchParam.get('query') || '';
 
   useEffect(() => {
-    if (searchSubmit === '') {
+    if (!movieQuery) {
       return;
     }
+
     const searchMovie = async () => {
-      await getSearchedMovies(searchSubmit)
+      await getSearchedMovies(movieQuery)
         .then(data => {
           if (data.results.length > 0) {
             setSearchMovies(data.results);
@@ -34,11 +28,11 @@ export default function MoviesPage() {
         })
         .catch(error => {
           alert('Movie not found');
-          console.log(error);
+          console.log(error.message);
         });
     };
     searchMovie();
-  }, [searchSubmit]);
+  }, [movieQuery]);
 
   const handleSearch = event => {
     setSearch(event.target.value);
@@ -46,7 +40,7 @@ export default function MoviesPage() {
 
   const handleSubmit = event => {
     event.preventDefault();
-    setSearchSubmit(search);
+    setSearchParam(search);
 
     if (search === '') {
       alert('Enter your search request please');

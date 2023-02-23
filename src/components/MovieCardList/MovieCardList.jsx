@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { MovieItemCard } from 'pages/MovieItemCard/MovieItemCard';
+import { MovieItemCard } from 'components/MovieItemCard/MovieItemCard';
 import css from './MovieCardList.module.css';
 
 export function MovieCardList({ movies }) {

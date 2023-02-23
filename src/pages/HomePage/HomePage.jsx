@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import css from './HomePage.module.css';
 import { getTrendMovies } from 'services/Api';
-import { MovieCardList } from 'pages/MovieCardList/MovieCardList';
+import { MovieCardList } from 'components/MovieCardList/MovieCardList';
 
 export default function HomePage() {
   const [movies, setMovies] = useState([]);
