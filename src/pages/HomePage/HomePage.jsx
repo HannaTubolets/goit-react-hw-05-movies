@@ -3,7 +3,7 @@ import css from './HomePage.module.css';
 import { getTrendMovies } from 'services/Api';
 import { MovieCardList } from 'pages/MovieCardList/MovieCardList';
 
-export const HomePage = () => {
+export default function HomePage() {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
     getTrendMovies().then(data => {
@@ -20,4 +20,4 @@ export const HomePage = () => {
       </div>
     </section>
   );
-};
+}

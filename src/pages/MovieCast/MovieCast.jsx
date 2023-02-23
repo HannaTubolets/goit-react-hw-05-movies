@@ -30,12 +30,14 @@ export default function Cast() {
   return (
     <>
       {isLoading && <Loader />}
-      {showNoActors && <h1>No actors for this movie</h1>}
-      {!error &&
-        actors &&
-        actors.map(({ id, character, name, profile_path }) => (
-          <div className={css.CastSection}>
-            <div key={id} className={css.ActorCard}>
+      {showNoActors && (
+        <h2 className={css.NoActors}>No actors for this movie 🙁</h2>
+      )}
+      <ul className={css.CastList}>
+        {!error &&
+          actors &&
+          actors.map(({ id, character, name, profile_path }) => (
+            <li key={id} className={css.ActorCard}>
               <img
                 className={css.MovieCastImg}
                 src={
@@ -59,9 +61,9 @@ export default function Cast() {
               ) : (
                 <h3 className={css.NoInfo}>No actor`s character</h3>
               )}
-            </div>
-          </div>
-        ))}
+            </li>
+          ))}
+      </ul>
     </>
   );
 }

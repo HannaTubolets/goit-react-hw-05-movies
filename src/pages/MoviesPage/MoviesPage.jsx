@@ -34,7 +34,7 @@ export default function MoviesPage() {
         })
         .catch(error => {
           alert('Movie not found');
-          console.err(error);
+          console.log(error);
         });
     };
     searchMovie();

@@ -1,11 +1,12 @@
-.CastSection {
-  /* display: grid;
+.CastList {
+  display: grid;
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  grid-gap: 16px; */
+  grid-gap: 16px;
   margin: 16px;
-  /* grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); */
+  padding: 0;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
 }
 
 .MovieCastImg {
@@ -15,11 +16,7 @@
 }
 
 .ActorCard {
-  display: grid;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  grid-gap: 16px;
+  list-style: none;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   max-width: 200px;
   padding: 8px;
@@ -42,4 +39,10 @@
   font-size: 16px;
   font-weight: 400;
   color: #010101;
+}
+
+.NoActors {
+  font-size: 18px;
+  color: #294652;
+  text-align: center;
 }

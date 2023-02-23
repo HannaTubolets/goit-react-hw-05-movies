@@ -3,6 +3,7 @@
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 16px;
   grid-gap: 24px;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
 }

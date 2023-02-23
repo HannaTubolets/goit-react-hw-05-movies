@@ -35,8 +35,6 @@ export function MovieItemCard({
           <h2 className={css.MovieName}>{title}</h2>
           <p>{overview}</p>
           <p className={css.MovieDate}>{releaseData.toLocaleDateString()}</p>
-          <p>{vote_average}</p>
-          <p>{genres}</p>
         </div>
       </NavLink>
     </li>
@@ -47,8 +45,8 @@ MovieItemCard.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   poster_path: PropTypes.string,
-  overview: PropTypes.string.isRequired,
+  overview: PropTypes.string,
   release_date: PropTypes.string,
-  vote_average: PropTypes.number.isRequired,
-  genres: PropTypes.string.isRequired,
+  vote_average: PropTypes.number,
+  genres: PropTypes.string,
 };

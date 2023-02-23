@@ -13,9 +13,6 @@ export function MovieCardList({ movies }) {
           release_date={release_date}
           title={title}
           poster_path={poster_path}
-          // overview={overview}
-          // vote_average={vote_average}
-          // genres={genres}
         />
       ))}
     </ul>

@@ -13,7 +13,7 @@
   border-radius: 8px;
   text-decoration: none;
   color: #294652;
-  border: 1px solid #0a88c2;
+  border: 2px solid #14afec;
   background-color: #fff;
   transition: all 250ms ease-in-out;
 }
@@ -75,17 +75,16 @@
 .MovieImg {
   border-radius: 8px;
   margin-bottom: 32px;
-  margin-right: 24px;
+  margin-right: 16px;
 }
 
 .CastLink,
 .ReviewsLink {
   height: 45px;
-  margin-right: 8px;
   border-radius: 8px;
   text-decoration: none;
   color: #294652;
-  border: 1px solid #0a88c2;
+  border: 2px solid #0a88c2;
   background-color: #fff;
   max-width: 180px;
   margin-left: 16px;
@@ -94,7 +93,6 @@
   font-size: 16px;
   font-weight: 500;
   padding: 8px 48px;
-  margin-bottom: 40px;
   transition: all 250ms ease-in-out;
 }
 .CastLink:hover,
@@ -107,4 +105,10 @@
   margin-bottom: 48px;
   display: block;
   text-align: center;
+}
+
+.active {
+  color: #fff;
+  border: 2px solid #294652;
+  background-color: #294652;
 }

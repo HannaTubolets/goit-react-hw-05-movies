@@ -87,14 +87,20 @@ export default function MovieDetailsPage() {
       {!error && (
         <section className={css.DownSection}>
           <NavLink
-            className={css.CastLink}
+            // className={css.CastLink}
+            className={({ isActive }) =>
+              `${css.CastLink} ${isActive ? css.active : ''}`
+            }
             to={`cast`}
             state={{ from: locationFrom }}
           >
             Cast
           </NavLink>
           <NavLink
-            className={css.ReviewsLink}
+            // className={css.ReviewsLink}
+            className={({ isActive }) =>
+              `${css.ReviewsLink} ${isActive ? css.active : ''}`
+            }
             to={`reviews`}
             state={{ from: locationFrom }}
           >

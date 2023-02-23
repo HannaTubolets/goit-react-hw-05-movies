@@ -9,8 +9,8 @@
   min-height: 64px;
   padding-right: 24px;
   padding-left: 24px;
-
-  padding-bottom: 12px;
+  padding-top: 16px;
+  padding-bottom: 16px;
   color: #fff;
   background-color: #14afec;
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
@@ -18,10 +18,9 @@
 }
 
 .NavLink {
-  font-size: 21px;
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: 500;
   padding: 8px 48px;
-  margin-bottom: 8px;
   border-radius: 8px;
   text-decoration: none;
   color: #294652;
@@ -34,19 +33,15 @@
   color: #0a88c2;
   box-shadow: inset 1px 1px 2px #14afec, inset -1px -1px 2px;
 }
-.NavLinkActive {
-  border: none;
+
+.active {
   color: #fff;
-  background-color: #7fd2f3;
-  box-shadow: inset 1px 1px 2px #010101;
+  border: 1px solid #294652;
+  background-color: #294652;
 }
 
-.navWrapper {
+.NavWrapper {
   display: flex;
-  gap: 24px;
+  gap: 16px;
   justify-content: center;
-}
-
-.Logo {
-  width: 0px;
 }

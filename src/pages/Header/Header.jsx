@@ -3,29 +3,33 @@ import { NavLink } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 import css from './Header.module.css';
 
-export const Header = () => {
+export default function Header() {
   return (
     <>
       <header className={css.Header}>
         <div>
-          <div>
-            <svg className={css.Logo} width="20" height="20">
-              <use href="../../images/movie-icon.svg"></use>
-            </svg>
-
-            <nav className={css.navWrapper}>
-              <NavLink className={css.NavLink} to="/">
-                Home
-              </NavLink>
-              <NavLink className={css.NavLink} to="/movies">
-                Movies
-              </NavLink>
-            </nav>
-          </div>
+          <nav className={css.NavWrapper}>
+            <NavLink
+              className={({ isActive }) =>
+                `${css.NavLink} ${isActive ? css.active : ''}`
+              }
+              to="/"
+            >
+              Home
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                `${css.NavLink} ${isActive ? css.active : ''}`
+              }
+              to="/movies"
+            >
+              Movies
+            </NavLink>
+          </nav>
         </div>
       </header>
 
       <Outlet />
     </>
   );
-};
+}
