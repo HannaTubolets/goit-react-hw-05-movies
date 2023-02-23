@@ -1,11 +1,4 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-// import  HomePage  from '../pages/HomePage/HomePage';
-// import MoviesPage from '../pages/MoviesPage/MoviesPage';
-// import MovieDetailsPage from '../pages/MovieDetailsPage/MovieDetailsPage';
-// import  Header  from '../pages/Header/Header';
-// import Cast from '../pages/MovieCast/MovieCast';
-// import Reviews from '../pages/MovieReviews/MovieReviews';
-
 import { lazy, Suspense } from 'react';
 import { Loader } from './Loader/Loader';
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
